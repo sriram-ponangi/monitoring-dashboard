@@ -1,20 +1,16 @@
 <p>
     <mat-toolbar color="primary">
-      <span>Health Monitoring Dashboard</span>
+        <span>HEALTH MONITORING DASHBOARD</span>
     </mat-toolbar>
-  </p>
+</p>
 
 
-<mat-tab-group preserveContent>
-    <mat-tab label="UAT">
-        <app-health-info environment="UAT"></app-health-info>
-    </mat-tab>
-    <mat-tab label="PPD">
-        <app-health-info environment="PPD"></app-health-info>
-    </mat-tab>
-    <mat-tab label="PRD">
-        <app-health-info environment="PRD"></app-health-info>
-    </mat-tab>
+<mat-tab-group preserveContent (selectedTabChange)="setActiveEnvironment($event)">
+    <div *ngFor="let env of getAllEnvironments(); let i = index">
+        <mat-tab [label]="env">
+            <app-health-info [healthApiConfigs]="getHealthApiConfigsByActiveEnv()"></app-health-info>
+        </mat-tab>
+    </div>
 </mat-tab-group>
 
 <router-outlet></router-outlet>

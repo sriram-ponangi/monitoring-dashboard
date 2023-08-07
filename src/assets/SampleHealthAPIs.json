@@ -2,12 +2,22 @@
 { 
     "allEnvHealthApiConfigs" : [
         {
-            "environment" :  "UAT",
+            "environment" :  "DEV",
             "configs":  [
                 {
                     "appName" : "Microservice-1",
                     "hostname" : "Hostname-1",
                     "apiEndpoint": "assets/SampleHealthResponse.json"
+                }
+            ]
+        },
+        {
+            "environment" :  "UAT",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint":  "http://127.0.0.1:9090/actuator/health"
                 },
                 {
                     "appName" : "Microservice-2",
@@ -33,7 +43,7 @@
                 {
                     "appName" : "Microservice-2",
                     "hostname" : "Hostname-3",
-                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
                 },
                 {
                     "appName" : "Microservice-3",

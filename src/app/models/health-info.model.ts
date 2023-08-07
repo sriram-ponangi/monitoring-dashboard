@@ -5,4 +5,5 @@ export interface HealthInfo {
     apiEndpoint: string;
     response: any;
     expanded: boolean;
+    refresh: boolean;
   }

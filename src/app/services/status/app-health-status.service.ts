@@ -1,6 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { AppHealthApiConfig } from 'src/app/models/health-api-config.model';
 import { HealthInfo } from 'src/app/models/health-info.model';
 
@@ -18,10 +17,11 @@ export class AppHealthStatusService {
       appName: appHealthApiConfig.appName,
       hostName: appHealthApiConfig.hostname,
       expanded: false,
+      refresh: false,
       response: {},
-      status: "UNKOWN"
+      status: "DOWN"
     }
-
+    
     this.http.get<HealthInfo>(appHealthApiConfig.apiEndpoint)
     .subscribe({
       next: (data) =>  {

@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { HealthInfo } from '../models/health-info.model';
-import { HealthApiConfigsService } from '../services/configs/health-api-configs.service';
-import { AllEnvHealthApiConfigs, HealthApiConfigs } from '../models/health-api-config.model';
+import { AppHealthApiConfig, HealthApiConfigs } from '../models/health-api-config.model';
 import { AppHealthStatusService } from '../services/status/app-health-status.service';
 
 
@@ -19,19 +18,16 @@ import { AppHealthStatusService } from '../services/status/app-health-status.ser
   ]
 })
 export class HealthInfoComponent {
-  @Input() environment = "UAT";
+  @Input() healthApiConfigs: HealthApiConfigs = {
+    environment: "N/A",
+    configs: []
+  };
 
   dataSource : HealthInfo[] = DEFAULT_DATA;
-  columnsToDisplay = ['appName', 'hostName', 'status'];
-  configs: AllEnvHealthApiConfigs = {allEnvHealthApiConfigs: []};
+  columnsToDisplay = ['appName', 'hostName', 'status', 'refresh'];
 
 
-  constructor(private healthApiConfigsService: HealthApiConfigsService,
-     private appHealthStatusService: AppHealthStatusService) {
-    this.healthApiConfigsService.getAllHealthApiConfigs().subscribe((response) => {
-      this.configs = response;
-    })
-
+  constructor(private appHealthStatusService: AppHealthStatusService) {
   }
 
   toggleSelectedRow(element: { expanded: boolean; }) {
@@ -48,31 +44,35 @@ export class HealthInfoComponent {
     })
   }
 
-  refreshAllRows() {
-    console.log(this.configs);
-    
-    let healthApiConfigs = this.configs.allEnvHealthApiConfigs
-    .find(apiConfigs => {
-      console.log(apiConfigs.environment, this.environment, apiConfigs.environment === this.environment);
-      return apiConfigs.environment === this.environment;
+  refreshAllRows() {      
+    this.dataSource = [];
+    this.healthApiConfigs.configs.forEach(appHealthApiConfig => {
+      let healthInfo : HealthInfo = this.appHealthStatusService.getAppHealthStatus(appHealthApiConfig);
+      this.dataSource.push(healthInfo);
     });
-
-    console.log(healthApiConfigs);
-    
-    if (healthApiConfigs != undefined) {
-        this.dataSource = [];
-        healthApiConfigs.configs.forEach(appHealthApiConfig => {
-          let healthInfo : HealthInfo = this.appHealthStatusService.getAppHealthStatus(appHealthApiConfig);
-          this.dataSource.push(healthInfo);
-        });
-
-    } else {
-     
-      this.dataSource = DEFAULT_DATA
-    }
-
   }
 
+  refreshRow(healthInfo: HealthInfo, index: number) {
+    console.log("Before",this.dataSource[index]);
+    
+    let appHealthApiConfig: AppHealthApiConfig = {
+      appName: healthInfo.appName,
+      hostname: healthInfo.hostName,
+      apiEndpoint: healthInfo.apiEndpoint
+    }
+    
+    let healthInfoResponse: HealthInfo = this.appHealthStatusService.getAppHealthStatus(appHealthApiConfig)
+    healthInfoResponse.expanded = true;
+
+    this.dataSource[index] = healthInfoResponse;
+    
+    // using the spread operator to create a new datasource
+    // instance so that the mat-table in UI notices this update
+    this.dataSource = [...this.dataSource]; 
+
+    console.log("After",this.dataSource[index]);
+  }
+  
 }
 
 const DEFAULT_DATA: HealthInfo[] = [
@@ -82,7 +82,8 @@ const DEFAULT_DATA: HealthInfo[] = [
     status: "N/A",
     apiEndpoint: "N/A",
     response: {},
-    expanded: false
+    expanded: false,
+    refresh: false
   }
 ]
 
