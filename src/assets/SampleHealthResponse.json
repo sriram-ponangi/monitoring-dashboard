@@ -1,0 +1,13 @@
+{
+    "status":"DUMMY_UP",
+    "details":{
+       "diskSpace":{
+          "status":"UP",
+          "details":{
+             "total":250790436864,
+             "free":100327518208,
+             "threshold":10485760
+          }
+       }
+    }
+ }

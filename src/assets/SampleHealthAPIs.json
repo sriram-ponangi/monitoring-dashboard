@@ -1,0 +1,114 @@
+
+{ 
+    "allEnvHealthApiConfigs" : [
+        {
+            "environment" :  "UAT",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-2",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-3",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                }
+            ]
+        },
+
+        {
+            "environment" :  "PPD",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-2",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-3",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-4",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-5",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-6",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                }
+            ]
+        },
+
+
+
+        {
+            "environment" :  "PRD",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-2",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-3",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-4",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-5",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-6",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-7",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-8",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                },
+                {
+                    "appName" : "Microservice-9",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "assets/SampleHealthResponse.json"
+                }
+            ]
+        }
+    ]
+}

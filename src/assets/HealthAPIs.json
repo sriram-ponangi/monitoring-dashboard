@@ -1,0 +1,114 @@
+
+{ 
+    "allEnvHealthApiConfigs" : [
+        {
+            "environment" :  "UAT",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-2",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-3",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                }
+            ]
+        },
+
+        {
+            "environment" :  "PPD",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-2",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-3",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-4",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-5",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-6",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                }
+            ]
+        },
+
+
+
+        {
+            "environment" :  "PRD",
+            "configs":  [
+                {
+                    "appName" : "Microservice-1",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-2",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-3",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-4",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-5",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-6",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-7",
+                    "hostname" : "Hostname-1",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-8",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                },
+                {
+                    "appName" : "Microservice-9",
+                    "hostname" : "Hostname-3",
+                    "apiEndpoint": "http://127.0.0.1:9090/actuator/health"
+                }
+            ]
+        }
+    ]
+}

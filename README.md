@@ -25,3 +25,32 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+---
+
+# Command Used:
+
+
+$ ng new monitoring-dashboard
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? SCSS
+
+
+$ ng generate component health-info
+
+$ ng add @angular/material
+? Would you like to proceed? Yes
+? Choose a prebuilt theme name, or "custom" for a custom theme: Deep Purple/Amber  [ Preview: 
+https://material.angular.io?theme=deeppurple-amber ]
+? Set up global Angular Material typography styles? Yes  
+? Include the Angular animations module? Include and enable animations
+
+$ ng generate service services/configs/HealthApiConfigs
+
+$ ng generate service services/status/AppHealthStatus
+
+> To Skip the TLS/SSL Cert Validation and CORS issues in Local testing use:
+$ cd C:\Program Files (x86)\Google\Chrome\Application
+$ chrome.exe --user-data-dir="C:\Users\username\Desktop\LocalTest" --disable-web-security

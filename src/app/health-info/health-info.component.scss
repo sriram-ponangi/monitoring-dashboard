@@ -1,0 +1,21 @@
+.example-detail-row {
+    height: 0;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .detail-table {
+    background: #b7b7b773;
+    text-align: center;
+  }
+
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
