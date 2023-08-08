@@ -29,7 +29,22 @@ export class AppHealthStatusService {
         healthInfo.status = "UP";
       },
       error: (e) => {
-        healthInfo.response = e;
+        if(e instanceof HttpErrorResponse) {
+          if(e['status'] === 200) {
+            healthInfo.response = {
+              status: "UP",
+              warning: "Could not parse the API response.",
+              message: e
+            }
+            healthInfo.status = "UP";
+            return;
+          }
+        }
+        healthInfo.response = {
+          status: "DOWN",
+          warning: "Failed to invoke the API.",
+          message: e
+        }
         healthInfo.status = "DOWN";
       }
     });

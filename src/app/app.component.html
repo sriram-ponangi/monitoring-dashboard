@@ -1,9 +1,6 @@
-<p>
-    <mat-toolbar color="primary">
-        <span>HEALTH MONITORING DASHBOARD</span>
-    </mat-toolbar>
-</p>
-
+<mat-toolbar color="primary">
+    <h4>HEALTH MONITORING DASHBOARD</h4>
+</mat-toolbar>
 
 <mat-tab-group preserveContent (selectedTabChange)="setActiveEnvironment($event)">
     <div *ngFor="let env of getAllEnvironments(); let i = index">

@@ -23,11 +23,10 @@
         <th mat-header-cell *matHeaderCellDef> Status </th>
         <td mat-cell *matCellDef="let element">
           
-          <button mat-raised-button disabled  *ngIf="element.status === 'UP' || element.status === 'N/A'; else downStatus"> {{element.status}} </button>
+          <h3 *ngIf="element.status === 'UP' || element.status === 'N/A'; else downStatus"><span style="background-color: green;" class="status-text-style">{{element.status}}</span></h3>
           <ng-template #downStatus>
-            <button mat-raised-button color="warn" > {{element.status}} </button>
+            <h3><span style="background-color: red;" class="status-text-style">{{element.status}}</span></h3>
           </ng-template>
-          
         </td>
       </ng-container>
 
